@@ -10,5 +10,10 @@ func serve() {
 		r.ParseForm()
 		http.Redirect(w, r, r.Form.Get("target"), 302)
 	})
+
+	http.HandleFunc("/foo", func(w http.ResponseWriter, r *http.Request) {
+		r.ParseForm()
+		http.Redirect(w, r, r.Form.Get("target"), 302)
+	})
 }
 
